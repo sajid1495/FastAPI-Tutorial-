@@ -1,1 +1,72 @@
-{"P001": {"name": "Fatima Akter", "city": "Dhaka", "age": 28, "gender": "female", "height": 1.65, "weight": 90.0, "bmi": 33.06, "verdict": "Obese"}, "P002": {"name": "Rahim Uddin", "city": "Chittagong", "age": 35, "gender": "male", "height": 1.75, "weight": 85, "bmi": 27.76, "verdict": "Overweight"}, "P003": {"name": "Nusrat Jahan", "city": "Sylhet", "age": 22, "gender": "female", "height": 1.6, "weight": 45, "bmi": 17.58, "verdict": "Underweight"}, "P004": {"name": "Karim Hossain", "city": "Rajshahi", "age": 40, "gender": "male", "height": 1.8, "weight": 95, "bmi": 29.32, "verdict": "Overweight"}, "P005": {"name": "Tasnim Rahman", "city": "Khulna", "age": 30, "gender": "female", "height": 1.55, "weight": 75, "bmi": 31.22, "verdict": "Obese"}, "P010": {"name": "John Doe", "city": "New York", "age": 30, "gender": "Male", "height": 175.0, "weight": 70.0, "bmi": 22.86, "verdict": "Normal"}, "P011": {"name": "John Doe", "city": "New York", "age": 30, "gender": "Male", "height": 175.0, "weight": 70.0, "bmi": 22.86, "verdict": "Normal"}}
+{
+    "P001": {
+        "name": "John Doe",
+        "city": "New York",
+        "age": 30,
+        "gender": "Male",
+        "height": 1750.0,
+        "weight": 700.0,
+        "bmi": 2.29,
+        "verdict": "Underweight"
+    },
+    "P002": {
+        "name": "Rahim Uddin",
+        "city": "Chittagong",
+        "age": 35,
+        "gender": "male",
+        "height": 1.75,
+        "weight": 85,
+        "bmi": 27.76,
+        "verdict": "Overweight"
+    },
+    "P003": {
+        "name": "Nusrat Jahan",
+        "city": "Sylhet",
+        "age": 22,
+        "gender": "female",
+        "height": 1.6,
+        "weight": 45,
+        "bmi": 17.58,
+        "verdict": "Underweight"
+    },
+    "P004": {
+        "name": "Karim Hossain",
+        "city": "Rajshahi",
+        "age": 40,
+        "gender": "male",
+        "height": 1.8,
+        "weight": 95,
+        "bmi": 29.32,
+        "verdict": "Overweight"
+    },
+    "P005": {
+        "name": "Tasnim Rahman",
+        "city": "Khulna",
+        "age": 30,
+        "gender": "female",
+        "height": 1.55,
+        "weight": 75,
+        "bmi": 31.22,
+        "verdict": "Obese"
+    },
+    "P010": {
+        "name": "John Doe",
+        "city": "New York",
+        "age": 30,
+        "gender": "Male",
+        "height": 175.0,
+        "weight": 70.0,
+        "bmi": 22.86,
+        "verdict": "Normal"
+    },
+    "P011": {
+        "name": "John Doe",
+        "city": "New York",
+        "age": 30,
+        "gender": "Male",
+        "height": 175.0,
+        "weight": 70.0,
+        "bmi": 22.86,
+        "verdict": "Normal"
+    }
+}

@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Path, Query, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field, computed_field
-from typing import Annotated, Literal
+from typing import Annotated, Literal, Optional
 import json
 
 app = FastAPI()
@@ -33,6 +33,15 @@ class Patient(BaseModel):
         elif 25 <= bmi_value < 30:
             return "Obese"
 
+
+class PatientUpdate(BaseModel):
+    name: Annotated[Optional[str], Field( default=None, description="Full name of the patient", example="John Doe")]
+    city: Annotated[Optional[str], Field(default=None, description="City of residence", example="New York")] 
+    age: Annotated[Optional[int], Field(default=None, gt=0, lt=120, description="Age of the patient in years", example=30)]
+    gender: Annotated[Optional[Literal["Male", "Female", "Other"]], Field(default=None, description="Gender of the patient", example="Male")]      
+    height: Annotated[Optional[float], Field(default=None, gt=0, description="Height of the patient in centimeters", example=175.0)]
+    weight: Annotated[Optional[float], Field(default=None, gt=0, description="Weight of the patient in kilograms", example=70.0)]
+    
 
 
 
@@ -103,3 +112,25 @@ def create_patient(patient: Patient):
     save_data(data)
 
     return JSONResponse(content={"message": "Patient created successfully."}, status_code=201)
+
+
+
+@app.put("/update/{patient_id}")
+def update_patient(patient_id: str, patient_update: PatientUpdate):
+    data = load_data()
+
+    if patient_id not in data:
+        raise HTTPException(status_code=404, detail="Patient not found.")
+    
+    existing_patient_data = data[patient_id]
+    updated_data = patient_update.model_dump(exclude_unset=True)
+
+    for key, value in updated_data.items():
+        existing_patient_data[key] = value
+
+    updated_patient = Patient(id=patient_id, **existing_patient_data)
+    data[patient_id] = updated_patient.model_dump(exclude=['id'])
+
+    save_data(data)
+
+    return JSONResponse(content={"message": "Patient updated successfully."}, status_code=200)
